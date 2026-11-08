@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+<style>.h{stroke:#3159AA}.a{stroke:#E2722F}.b{stroke:#00775A}@media (prefers-color-scheme: dark){.h{stroke:#5B84D8}.a{stroke:#DD6E2E}.b{stroke:#14916A}}</style>
+<g fill="none" stroke-width="3" transform="rotate(-87 10 10)">
+<circle class="h" cx="10" cy="10" r="7" stroke-dasharray="7.6 36.4"/>
+<circle class="a" cx="10" cy="10" r="7" stroke-dasharray="0 8.8 16.4 18.8"/>
+<circle class="b" cx="10" cy="10" r="7" stroke-dasharray="0 26.4 7.6 10"/>
+<circle class="h" cx="10" cy="10" r="7" stroke-dasharray="0 35.2 7.6 1.2"/>
+</g>
+</svg>

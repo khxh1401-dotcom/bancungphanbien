@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bạn cùng phản biện</title>
+<meta name="description" content="Mô hình đối thoại với trí tuệ nhân tạo rèn luyện tư duy phản biện cho học sinh trung học phổ thông: câu lệnh soạn sẵn biến ChatGPT, Gemini hoặc Copilot thành người bạn tranh luận, không làm bài hộ.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Bạn cùng phản biện">
+<meta property="og:description" content="Mô hình đối thoại với trí tuệ nhân tạo rèn luyện tư duy phản biện cho học sinh trung học phổ thông: câu lệnh soạn sẵn biến ChatGPT, Gemini hoặc Copilot thành người bạn tranh luận, không làm bài hộ.">
+<meta name="theme-color" content="#F4F0E6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11151D" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- Tên học sinh, giáo viên, trường: sửa trong tệp thong-tin.js -->
+<script src="thong-tin.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topline">
+  <div class="wrap">
+    <span class="brand"><svg viewBox="0 0 20 20" aria-hidden="true"><circle class="b-hs" cx="10" cy="10" r="7" stroke-dasharray="7.6 36.4" transform="rotate(-87 10 10)"/><circle class="b-ai" cx="10" cy="10" r="7" stroke-dasharray="0 8.8 16.4 18.8" transform="rotate(-87 10 10)"/><circle class="b-both" cx="10" cy="10" r="7" stroke-dasharray="0 26.4 7.6 10" transform="rotate(-87 10 10)"/><circle class="b-hs" cx="10" cy="10" r="7" stroke-dasharray="0 35.2 7.6 1.2" transform="rotate(-87 10 10)"/></svg>Bạn cùng phản biện</span>
+    <span class="tl-r">Khoa học xã hội và hành vi · Năm học <span data-info="namHoc">2026–2027</span></span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Dự án khoa học kĩ thuật · Học sinh trung học phổ thông</p>
+      <h1>Bạn cùng phản biện</h1>
+      <p class="hero-sub">Mô hình đối thoại với trí tuệ nhân tạo rèn luyện tư duy phản biện cho học sinh trung học phổ thông</p>
+      <p class="hero-lede">Trang soạn sẵn câu lệnh biến ChatGPT, Gemini hoặc Copilot thành một người bạn tranh luận. AI không làm bài hộ: AI hỏi lại, góp ý và phản bác theo quy trình 5 bước để em tự suy nghĩ sắc bén hơn.</p>
+      <div class="hero-cta">
+        <button type="button" class="btn" data-goto="t-luyen">Bắt đầu luyện</button>
+        <button type="button" class="btn ghost" data-goto="t-nc">Cơ sở khoa học</button>
+      </div>
+    </div>
+    <figure class="hero-fig">
+      <div class="ring" id="heroRing"></div>
+      <ul class="legend" aria-label="Chú giải màu">
+        <li><i class="k hs"></i>Học sinh dẫn dắt</li>
+        <li><i class="k ai"></i>AI dẫn dắt</li>
+        <li><i class="k both"></i>Hai bên tranh luận</li>
+      </ul>
+      <figcaption>Quy trình 5P: Phát biểu, Phân tích, Phản hồi, Phản bác, Phát huy. Màu cho biết ai dẫn dắt từng bước.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="basis">
+      <p class="eyebrow">Thiết kế dựa trên sáu cơ sở khoa học · bấm để xem</p>
+      <ol>
+        <li><button type="button" data-goto="t-nc" data-jump="b1"><span class="bn">01</span><span class="bl">Lập luận có cấu trúc</span><span class="bc">Toulmin, 2003</span></button></li>
+        <li><button type="button" data-goto="t-nc" data-jump="b2"><span class="bn">02</span><span class="bl">Câu hỏi Socrates</span><span class="bc">Paul &amp; Elder, 2006</span></button></li>
+        <li><button type="button" data-goto="t-nc" data-jump="b3"><span class="bn">03</span><span class="bl">Tranh luận với người nghĩ khác</span><span class="bc">Kuhn &amp; Crowell, 2011</span></button></li>
+        <li><button type="button" data-goto="t-nc" data-jump="b4"><span class="bn">04</span><span class="bl">Hỗ trợ vừa sức, giảm dần</span><span class="bc">Vygotsky, 1978</span></button></li>
+        <li><button type="button" data-goto="t-nc" data-jump="b5"><span class="bn">05</span><span class="bl">Phản hồi chỉ ra bước tiếp</span><span class="bc">Hattie &amp; Timperley, 2007</span></button></li>
+        <li><button type="button" data-goto="t-nc" data-jump="b6"><span class="bn">06</span><span class="bl">Không để AI nghĩ hộ</span><span class="bc">Bastani và cộng sự, 2025</span></button></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="Các phần của trang">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" id="t-luyen" aria-controls="p-luyen" aria-selected="true"><span class="tn">01</span>Luyện với AI</button>
+    <button class="tab" role="tab" id="t-chude" aria-controls="p-chude" aria-selected="false" tabindex="-1"><span class="tn">02</span>Chủ đề</button>
+    <button class="tab" role="tab" id="t-choi" aria-controls="p-choi" aria-selected="false" tabindex="-1"><span class="tn">03</span>Trò chơi</button>
+    <button class="tab" role="tab" id="t-kt" aria-controls="p-kt" aria-selected="false" tabindex="-1"><span class="tn">04</span>Tự kiểm tra</button>
+    <button class="tab" role="tab" id="t-lop" aria-controls="p-lop" aria-selected="false" tabindex="-1"><span class="tn">05</span>Trên lớp</button>
+    <button class="tab" role="tab" id="t-nc" aria-controls="p-nc" aria-selected="false" tabindex="-1"><span class="tn">06</span>Cơ sở khoa học</button>
+  </div>
+</nav>
+
+<main>
+<!-- ================= 1. LUYỆN VỚI AI ================= -->
+<section class="panelv" id="p-luyen" role="tabpanel" aria-labelledby="t-luyen" tabindex="-1">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Phần 1 · Luyện với AI</p>
+      <h2>Ba lựa chọn, một câu lệnh</h2>
+      <p class="lead">Chọn <b>vai của AI</b>, <b>mức bắt đầu</b> và <b>chủ đề</b>. Trang soạn sẵn câu lệnh; em chép, dán vào ứng dụng AI rồi trò chuyện. Không cần đăng kí gì trên trang này.</p>
+    </div>
+
+    <div class="path-h">
+      <p class="eyebrow">Lộ trình gợi ý 4 buổi · bấm để chọn sẵn</p>
+      <p class="status" id="pathStatus" role="status" aria-live="polite"></p>
+    </div>
+    <ul class="path" id="pathList"></ul>
+
+    <div class="flow">
+      <form class="steps" id="setup" autocomplete="off">
+        <div class="card">
+          <fieldset>
+            <legend class="step-h"><span class="n">1</span>AI đóng vai gì?</legend>
+            <p class="helpme">Chưa biết chọn? <button type="button" class="linkish" id="helpBtn" aria-expanded="false" aria-controls="weakBox">Cho trang chọn giúp</button></p>
+            <div id="weakBox" class="tip" hidden>
+              <p style="margin-bottom:8px"><b>Khi tranh luận, em thấy khó nhất ở đâu?</b></p>
+              <div class="pills" id="weakList"></div>
+            </div>
+            <p class="group-l">Theo quy trình 5P</p>
+            <div class="opts">
+              <label class="choice"><input type="radio" name="mode" value="full" checked><span class="in"><b>Trọn bộ 5P <span class="tag">Nên bắt đầu</span></b><small>AI dẫn em đi đủ 5 bước, từ Phát biểu đến Phát huy.</small><span class="lead5"><span class="bars5" aria-hidden="true"><i class="hs"></i><i class="ai"></i><i class="ai"></i><i class="both"></i><i class="hs"></i></span>Bước 1–5</span></span></label>
+              <label class="choice"><input type="radio" name="mode" value="hoi"><span class="in"><b>Người hỏi</b><small>Chỉ đặt câu hỏi gợi mở để em tự làm rõ và hoàn thiện ý mình.</small><span class="lead5"><span class="bars5" aria-hidden="true"><i></i><i class="ai"></i><i class="ai"></i><i></i><i></i></span>Dẫn bước 2–3</span></span></label>
+              <label class="choice"><input type="radio" name="mode" value="doithu"><span class="in"><b>Đối thủ</b><small>Đứng ở phía ngược lại, phản bác khó dần để em tập đáp trả.</small><span class="lead5"><span class="bars5" aria-hidden="true"><i></i><i></i><i></i><i class="both"></i><i></i></span>Dẫn bước 4</span></span></label>
+              <label class="choice"><input type="radio" name="mode" value="trongtai"><span class="in"><b>Trọng tài</b><small>Em dán đoạn văn tự viết, AI chấm theo bảng kiểm 5 thành phần.</small><span class="lead5"><span class="bars5" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="hs"></i></span>Dẫn bước 5</span></span></label>
+            </div>
+            <p class="group-l">Trò chơi luyện kĩ năng</p>
+            <div class="opts">
+              <label class="choice"><input type="radio" name="mode" value="sanloi"><span class="in"><b>Săn ngụy biện</b><small>Tìm lỗi trong 5 đoạn lập luận, khó dần.</small></span></label>
+              <label class="choice"><input type="radio" name="mode" value="kiemchung"><span class="in"><b>Thám tử kiểm chứng</b><small>Điều tra 3 tin đồn giả định theo luật 2 nguồn.</small></span></label>
+              <label class="choice"><input type="radio" name="mode" value="emphanbien"><span class="in"><b>Em làm người phản biện</b><small>AI nói một ý kiến còn yếu, em tìm ra chỗ yếu.</small></span></label>
+            </div>
+            <p class="tip" id="tip-mode" hidden></p>
+          </fieldset>
+        </div>
+
+        <div class="card">
+          <fieldset>
+            <legend class="step-h"><span class="n">2</span>Bắt đầu ở mức nào?</legend>
+            <div class="opts three">
+              <label class="choice"><input type="radio" name="level" value="lamquen" checked><span class="in"><b>Làm quen</b><small>Câu hỏi ngắn, nhiều gợi ý, phản bác nhẹ nhàng.</small><span class="lvdots" aria-hidden="true"><i class="on"></i><i></i><i></i></span></span></label>
+              <label class="choice"><input type="radio" name="level" value="vungvang"><span class="in"><b>Vững vàng</b><small>Hỏi sâu hơn, cần nêu nguồn của bằng chứng.</small><span class="lvdots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span></span></label>
+              <label class="choice"><input type="radio" name="level" value="thuthach"><span class="in"><b>Thử thách</b><small>Chất vấn như một trận tranh biện thật, ít gợi ý.</small><span class="lvdots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span></span></label>
+            </div>
+            <p class="note">Sau đó AI tự tăng hoặc giảm độ khó theo câu trả lời của em.</p>
+          </fieldset>
+        </div>
+
+        <div class="card">
+          <fieldset>
+            <legend class="step-h"><span class="n">3</span><label for="topicSel">Tranh luận về chủ đề gì?</label></legend>
+            <div class="topic-row">
+              <select id="topicSel" name="topicSel"></select>
+              <button type="button" class="btn ghost" id="randTopic">Chủ đề ngẫu nhiên</button>
+            </div>
+            <input type="text" id="topicCustom" name="topicCustom" maxlength="160" placeholder="Nhập chủ đề của em, ví dụ: Có nên cấm bán trà sữa trước cổng trường?" hidden>
+            <div class="topic-meta" id="topicMeta"></div>
+            <p class="note">Chủ đề ngẫu nhiên được chọn theo mức ở bước 2. <button type="button" class="linkish" data-goto="t-chude">Xem cả 103 chủ đề</button></p>
+          </fieldset>
+        </div>
+
+        <details class="more" id="moreBox">
+          <summary>Tùy chỉnh thêm <span>không bắt buộc · xưng hô, giọng điệu, kĩ năng, sở thích</span></summary>
+          <div class="more-body">
+            <div class="two">
+              <fieldset>
+                <legend class="field-l">AI xưng hô như</legend>
+                <div class="seg">
+                  <label class="opt"><input type="radio" name="persona" value="ban" checked><span>Bạn cùng tuổi</span></label>
+                  <label class="opt"><input type="radio" name="persona" value="anhchi"><span>Anh chị khóa trên</span></label>
+                  <label class="opt"><input type="radio" name="persona" value="thayco"><span>Thầy cô</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend class="field-l">Giọng điệu</legend>
+                <div class="seg">
+                  <label class="opt"><input type="radio" name="tone" value="vui" checked><span>Vui vẻ</span></label>
+                  <label class="opt"><input type="radio" name="tone" value="diem"><span>Điềm tĩnh</span></label>
+                  <label class="opt"><input type="radio" name="tone" value="thuthach"><span>Nhiều thử thách</span></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="two">
+              <fieldset>
+                <legend class="field-l"><label for="focusSel">Kĩ năng muốn cải thiện</label></legend>
+                <select id="focusSel" name="focusSel">
+                  <option value="">Chưa chọn</option>
+                  <option value="trinhbay">Nói ý kiến rõ ràng</option>
+                  <option value="bangchung">Tìm lí lẽ và bằng chứng</option>
+                  <option value="dapphanbac">Đáp lại khi bị phản bác</option>
+                  <option value="kiemchung">Kiểm chứng thông tin</option>
+                  <option value="nguybien">Nhận ra lỗi ngụy biện</option>
+                  <option value="gopy">Góp ý người khác tôn trọng</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <legend class="field-l"><label for="interest">Em thích gì? (AI lấy ví dụ theo)</label></legend>
+                <input type="text" id="interest" name="interest" maxlength="60" placeholder="Ví dụ: bóng đá, vẽ, nấu ăn">
+              </fieldset>
+            </div>
+            <fieldset>
+              <legend class="field-l">Hình thức</legend>
+              <div class="seg">
+                <label class="opt"><input type="radio" name="voice" value="text" checked><span>Gõ chữ</span></label>
+                <label class="opt"><input type="radio" name="voice" value="voice"><span>Nói bằng giọng nói</span></label>
+              </div>
+              <p class="tip" id="tip-voice" hidden>Dán câu lệnh bằng bàn phím trước, rồi mới bật chế độ trò chuyện bằng giọng nói của ứng dụng AI. Khi nói, em đọc tên lệnh, ví dụ “gợi ý”.</p>
+            </fieldset>
+            <div class="checks">
+              <label class="check"><input type="checkbox" id="hints" checked><span>Gợi ý mẫu câu khi em bí<small>Ví dụ: “Mình cho rằng… vì… Ví dụ là…”</small></span></label>
+              <label class="check"><input type="checkbox" id="local"><span>Lấy ví dụ đời sống miền Tây<small>Sông nước, chợ quê, trường học ở quê.</small></span></label>
+              <label class="check"><input type="checkbox" id="emoji"><span>Cho phép biểu tượng cảm xúc<small>Tối đa một biểu tượng mỗi lượt.</small></span></label>
+              <label class="check"><input type="checkbox" id="compact"><span>Câu lệnh bản gọn<small>Dưới 4.000 kí tự, cho ứng dụng giới hạn độ dài tin nhắn. Nút Copilot tự dùng bản này.</small></span></label>
+            </div>
+          </div>
+        </details>
+      </form>
+
+      <aside class="card out" aria-labelledby="out-title">
+        <div>
+          <p class="eyebrow">Câu lệnh của em</p>
+          <h2 id="out-title">Sẵn sàng để chép</h2>
+        </div>
+        <dl class="summary" id="summary"></dl>
+        <ol class="go">
+          <li class="go-btn"><div>
+            <button type="button" class="btn big" id="copyBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"></path></svg>
+              Sao chép câu lệnh
+            </button>
+            <p class="status" id="status" role="status" aria-live="polite"></p></div></li>
+          <li><div><p class="t">Mở ứng dụng AI, tạo cuộc trò chuyện mới</p>
+            <div class="ai-links">
+              <a class="ai-btn" data-ai="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT ↗</a>
+              <a class="ai-btn" data-ai="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini ↗</a>
+              <a class="ai-btn" data-ai="copilot" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Copilot ↗</a>
+            </div>
+            <p class="note" style="margin-top:6px">Bấm nút ứng dụng cũng chép luôn câu lệnh.</p></div></li>
+          <li><div><p class="t">Dán vào ô chat và gửi</p><p class="note">Nhấn Ctrl + V trên máy tính, hoặc giữ ngón tay rồi chọn Dán trên điện thoại. AI sẽ chào và mời em nói trước.</p></div></li>
+        </ol>
+        <p class="tip warm" id="tip-copilot" hidden></p>
+        <details class="peek" id="promptBox">
+          <summary>Xem nội dung câu lệnh <span id="promptLen"></span></summary>
+          <textarea id="prompt" readonly spellcheck="false" aria-label="Nội dung câu lệnh"></textarea>
+        </details>
+      </aside>
+    </div>
+
+    <div class="below">
+      <section class="card" aria-labelledby="cmd-t" data-status="cmdStatus">
+        <div class="card-h"><div><p class="eyebrow">Trong lúc trò chuyện</p><h3 id="cmd-t">Lệnh nhanh: gõ một từ, AI làm ngay</h3></div></div>
+        <p class="note">Gõ lệnh vào ô chat, viết hoa, viết thường hay không dấu đều được (ví dụ GỢI Ý hoặc goi y). Bấm vào lệnh để chép.</p>
+        <div class="cmd-top" id="cmdTop"></div>
+        <details class="more">
+          <summary>Xem tất cả <span id="cmdCount"></span></summary>
+          <div class="more-body"><div class="cmd-board" id="cmdBoard"></div></div>
+        </details>
+        <p class="status" id="cmdStatus" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card" aria-labelledby="why-t">
+        <div class="card-h"><div><p class="eyebrow">Bên trong câu lệnh</p><h3 id="why-t">Câu lệnh dạy AI trò chuyện như một người bạn biết phản biện</h3></div></div>
+        <ol class="why-grid">
+          <li><span class="num">01</span><b>Nghe trước, hỏi sau</b><p>AI nhắc lại ý em bằng chính từ khóa của em, rồi mới hỏi hay phản bác.</p></li>
+          <li><span class="num">02</span><b>Mỗi lượt một câu hỏi</b><p>Câu ngắn, có nhãn cho biết đang ở bước nào; hỏi xong thì dừng lại chờ em.</p></li>
+          <li><span class="num">03</span><b>Vừa sức với em</b><p>Em trả lời tốt hai lượt liền thì AI hỏi khó hơn; em bí thì AI chia nhỏ câu hỏi và gợi ý từ ít đến nhiều.</p><cite>Vygotsky, 1978; van de Pol và cộng sự, 2010</cite></li>
+          <li><span class="num">04</span><b>Sáu kiểu câu hỏi Socrates</b><p>Làm rõ ý, tìm giả định, hỏi bằng chứng, xét góc nhìn khác, xét hệ quả, hỏi vì sao vấn đề quan trọng.</p><cite>Paul &amp; Elder, 2006</cite></li>
+          <li><span class="num">05</span><b>Chấm có căn cứ</b><p>Chấm 5 thành phần lập luận, mỗi điểm kèm câu trích từ bài của em, và so bản đầu với bản phát huy.</p><cite>Toulmin, 2003; Hattie &amp; Timperley, 2007</cite></li>
+          <li><span class="num">06</span><b>Không nịnh, không làm hộ</b><p>Chỉ công nhận em đúng khi có lí lẽ mới; không viết hộ dù em năn nỉ; số liệu luôn kèm lời nhắc “cần kiểm chứng”.</p><cite>Risko &amp; Gilbert, 2016; Bastani và cộng sự, 2025</cite></li>
+        </ol>
+        <p class="note">AI vẫn có thể trả lời sai hoặc quên vai. Khi đó em gõ <kbd>NHỚ VAI</kbd>, và luôn tự kiểm chứng số liệu ở hai nguồn đáng tin.</p>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. THƯ VIỆN CHỦ ĐỀ ================= -->
+<section class="panelv" id="p-chude" role="tabpanel" aria-labelledby="t-chude" tabindex="-1" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Phần 2 · Thư viện chủ đề</p>
+      <h2>103 câu hỏi tranh luận cho học sinh THPT</h2>
+      <p class="lead">Chủ đề chia theo <b>11 lĩnh vực</b>, gắn với các môn học, và có <b>ba mức khó</b>. Mỗi chủ đề ghi sẵn các bên liên quan để AI gợi ý góc nhìn khác. Bấm “Luyện chủ đề này” để đưa chủ đề sang phần Luyện với AI.</p>
+    </div>
+    <div class="card lib-tools">
+      <div class="lib-row">
+        <label class="sr" for="libQ">Tìm chủ đề</label>
+        <input type="search" id="libQ" placeholder="Tìm chủ đề, ví dụ: điện thoại, môi trường (gõ không dấu cũng được)">
+        <div class="seg" id="libLv" role="radiogroup" aria-label="Lọc theo độ khó">
+          <label class="opt"><input type="radio" name="liblv" value="0" checked><span>Mọi mức</span></label>
+          <label class="opt"><input type="radio" name="liblv" value="1"><span>Dễ</span></label>
+          <label class="opt"><input type="radio" name="liblv" value="2"><span>Vừa</span></label>
+          <label class="opt"><input type="radio" name="liblv" value="3"><span>Khó</span></label>
+        </div>
+        <button type="button" class="btn ghost small" id="libRand">Chọn ngẫu nhiên</button>
+      </div>
+      <div class="chips" id="libFields" aria-label="Lọc theo lĩnh vực"></div>
+    </div>
+    <p class="lib-count" id="libCount" role="status" aria-live="polite"></p>
+    <ul class="lib" id="libList"></ul>
+    <p class="note" style="margin-top:16px">Muốn tranh luận chủ đề khác? Ở bước 3 của phần Luyện với AI, chọn “Tự nhập chủ đề khác…”.</p>
+  </div>
+</section>
+
+<!-- ================= 3. TRÒ CHƠI ================= -->
+<section class="panelv" id="p-choi" role="tabpanel" aria-labelledby="t-choi" tabindex="-1" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Phần 3 · Trò chơi</p>
+      <h2>Luyện mắt nhìn ra lỗi, ngay trên trang</h2>
+      <p class="lead">Hai trò chơi chạy ngay trên trang, <b>không cần tài khoản AI</b>. Chơi xong, em thử bản khó hơn với AI: chọn vai “Săn ngụy biện” hoặc “Thám tử kiểm chứng” ở phần Luyện với AI.</p>
+      <div class="jump">
+        <button type="button" class="btn ghost small" data-jump="g-quiz">Đoán lỗi ngụy biện</button>
+        <button type="button" class="btn ghost small" data-jump="g-tin">Thám tử kiểm chứng</button>
+        <button type="button" class="btn ghost small" data-jump="g-the">12 thẻ ngụy biện</button>
+      </div>
+    </div>
+    <div class="games">
+      <section class="card" id="g-quiz" style="scroll-margin-top:var(--navh, 80px)" aria-labelledby="quiz-t">
+        <div class="card-h">
+          <div><p class="eyebrow">Trò chơi 1 · 8 câu mỗi lượt</p><h3 id="quiz-t">Đoán lỗi ngụy biện</h3></div>
+          <div class="seg" id="quizLv" role="radiogroup" aria-label="Chọn mức">
+            <label class="opt"><input type="radio" name="quizlv" value="1" checked><span>Làm quen · 6 lỗi</span></label>
+            <label class="opt"><input type="radio" name="quizlv" value="2"><span>Vững vàng · 9 lỗi</span></label>
+            <label class="opt"><input type="radio" name="quizlv" value="3"><span>Thử thách · 12 lỗi</span></label>
+          </div>
+        </div>
+        <p class="note"><b>Ngụy biện</b> là lập luận nghe có lí nhưng thật ra sai. Đọc từng câu, chọn tên lỗi, rồi xem giải thích.</p>
+        <div id="quizBody"></div>
+        <p class="sr" id="quizLive" aria-live="polite"></p>
+      </section>
+
+      <section class="card" id="g-tin" style="scroll-margin-top:var(--navh, 80px)" aria-labelledby="tin-t">
+        <div class="card-h">
+          <div><p class="eyebrow">Trò chơi 2 · 6 vụ</p><h3 id="tin-t">Thám tử kiểm chứng</h3></div>
+        </div>
+        <p class="note">Đọc tin, đánh dấu các <b>dấu hiệu đáng ngờ</b> em thấy, rồi bấm “Kiểm tra”. Mọi tin đều do nhóm tự viết để luyện tập, không có thật.</p>
+        <div id="tinBody"></div>
+        <p class="sr" id="tinLive" aria-live="polite"></p>
+      </section>
+    </div>
+
+    <h3 class="sec-t" id="g-the">12 thẻ ngụy biện</h3>
+    <p class="note" style="margin-bottom:14px">Mức Làm quen học 6 lỗi đầu, mức Vững vàng thêm 3 lỗi, mức Thử thách đủ 12 lỗi. AI dùng đúng các tên lỗi này khi trò chuyện.</p>
+    <div class="fallacies" id="fallacyGrid"></div>
+  </div>
+</section>
+
+<!-- ================= 4. TỰ KIỂM TRA ================= -->
+<section class="panelv" id="p-kt" role="tabpanel" aria-labelledby="t-kt" tabindex="-1" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Phần 4 · Tự kiểm tra và nhật ký</p>
+      <h2>Lập luận của em đã đủ 5 thành phần chưa?</h2>
+      <p class="lead">Dùng trong lúc trò chuyện với AI, trước khi viết bản phát huy. Năm câu hỏi theo đúng <b>bảng kiểm lập luận 5 thành phần</b> mà AI dùng để chấm. Câu nào chọn “Chưa”, trang gợi ý cách sửa ngay bên dưới.</p>
+    </div>
+    <div class="kt-grid">
+      <section class="card" data-status="qStatus" aria-labelledby="kt-t">
+        <h3 id="kt-t" class="sr">Năm câu hỏi tự kiểm tra</h3>
+        <p class="tip" id="qGame" hidden></p>
+        <ol class="qlist" id="qList"></ol>
+        <div id="qEnd" aria-live="polite"></div>
+        <p class="status" id="qStatus" role="status" aria-live="polite"></p>
+        <div class="actions"><button type="button" class="linkish quiet" id="qReset">Xóa câu trả lời</button></div>
+      </section>
+
+      <section class="card" data-status="jStatus" aria-labelledby="nk-t">
+        <div><p class="eyebrow">Nhật ký buổi luyện</p><h3 id="nk-t">Ghi lại để thấy mình tiến bộ</h3></div>
+        <ol class="jsteps">
+          <li>Cuối buổi, gõ <button type="button" class="cmd-chip" data-cmd="NHẬT KÝ"><kbd>NHẬT KÝ</kbd><span>bấm để chép</span></button> cho AI. AI ghi nhật ký theo mẫu.</li>
+          <li>Chép phần AI vừa ghi, dán vào ô đầu tiên.</li>
+          <li>Tự viết điều em học được, rồi bấm Lưu hoặc Sao chép để gửi giáo viên.</li>
+        </ol>
+        <div class="journal">
+          <label for="jAi">Nhật ký AI ghi<textarea id="jAi" spellcheck="false" placeholder="Dán phần “NHẬT KÝ BẠN CÙNG PHẢN BIỆN” mà AI vừa ghi…"></textarea></label>
+          <label for="jLearn">Điều em học được hôm nay<textarea id="jLearn" placeholder="Hôm nay mình nhận ra…"></textarea></label>
+          <label for="jNext">Lần sau em sẽ thử<textarea id="jNext" placeholder="Lần sau mình sẽ…"></textarea></label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn" id="jSave">Lưu vào sổ</button>
+          <button type="button" class="btn ghost" id="jCopy">Sao chép</button>
+          <button type="button" class="linkish quiet" id="jClear">Xóa các ô</button>
+        </div>
+        <p class="status" id="jStatus" role="status" aria-live="polite"></p>
+        <p class="note" id="jNote"></p>
+        <textarea id="jManual" readonly hidden aria-label="Nhật ký để chép tay"></textarea>
+      </section>
+    </div>
+
+    <section class="card" id="logCard" style="margin-top:20px" aria-labelledby="so-t">
+      <div class="card-h"><div><p class="eyebrow">Sổ nhật ký trên máy này</p><h3 id="so-t">Các buổi đã lưu</h3></div><p class="note" id="logSummary"></p></div>
+      <ol class="log" id="logList"></ol>
+    </section>
+  </div>
+</section>
+
+<!-- ================= 5. DÙNG TRÊN LỚP ================= -->
+<section class="panelv" id="p-lop" role="tabpanel" aria-labelledby="t-lop" tabindex="-1" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Phần 5 · Dùng trên lớp</p>
+      <h2>Bốn buổi luyện, mỗi buổi 45 phút</h2>
+      <p class="lead">Độ khó tăng dần qua 4 buổi. Chọn buổi, chiếu trang lên màn hình và bấm <b>Bắt đầu</b>. Đồng hồ tự chuyển phần, kêu ba tiếng báo và ghi rõ học sinh cần làm gì. Mẹo: nhấn F11 để phóng to toàn màn hình.</p>
+    </div>
+    <div class="sessions" id="sessTabs" role="group" aria-label="Chọn buổi"></div>
+    <p class="status warn" id="sessStatus" role="status" aria-live="polite"></p>
+    <div class="lop-grid">
+      <div class="card clock-card" id="cCard">
+        <p class="clock-step" id="cStep"></p>
+        <p class="clock-name" id="cName" aria-live="polite"></p>
+        <p class="clock-time" id="cTime" role="timer" aria-label="Thời gian còn lại của phần này"></p>
+        <p class="clock-do" id="cDo"></p>
+        <div class="clock-btns">
+          <button type="button" class="btn big" id="cStart" style="width:auto">Bắt đầu</button>
+          <button type="button" class="btn ghost big" id="cNext" style="width:auto">Sang phần tiếp</button>
+        </div>
+        <div class="actions" style="justify-content:center">
+          <button type="button" class="linkish quiet" id="cBack">Quay lại phần trước</button>
+          <button type="button" class="linkish quiet" id="cReset">Làm lại từ đầu</button>
+        </div>
+      </div>
+      <div class="stack">
+        <section class="card" aria-labelledby="sess-t">
+          <div><p class="eyebrow" id="sessK"></p><h3 id="sess-t"></h3></div>
+          <p id="sessGoal"></p>
+          <dl class="kv" id="sessKv"></dl>
+          <div class="actions"><button type="button" class="btn small" id="sessApply">Chọn sẵn trên máy này</button></div>
+          <p class="status" id="sessApplied" role="status" aria-live="polite"></p>
+        </section>
+        <section class="card" aria-labelledby="plan-t">
+          <h3 id="plan-t" style="font-size:1.12rem">Các phần của buổi</h3>
+          <ol class="plan" id="cPlan"></ol>
+        </section>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:18px">
+      <section class="card" aria-labelledby="truoc-t">
+        <h3 id="truoc-t" style="font-size:1.12rem">Trước giờ học</h3>
+        <ul class="notes">
+          <li>Thử dán câu lệnh vào ứng dụng AI một lần để chắc AI trả lời đúng vai.</li>
+          <li>Chọn một chủ đề chung cho cả lớp trong thư viện 103 chủ đề.</li>
+          <li>Học sinh dùng thiết bị, tài khoản do nhà trường quản lí, có sự đồng ý của phụ huynh; không nhập họ tên, trường, số điện thoại vào ứng dụng AI.</li>
+          <li>Cắm sạc và tắt chế độ tự tắt màn hình của máy chiếu, máy tính.</li>
+          <li>Nếu AI làm hộ hoặc nói quá dài, học sinh gõ <kbd>NHỚ VAI</kbd>.</li>
+        </ul>
+      </section>
+      <section class="card" aria-labelledby="dau-t">
+        <h3 id="dau-t" style="font-size:1.12rem">Đọc nhật ký học sinh: 6 dấu hiệu tiến bộ</h3>
+        <p class="note">Thầy cô có thể đếm các dấu hiệu này trong nhật ký hội thoại mỗi buổi để thấy học sinh tiến bộ. Lệnh NHẬT KÝ giúp AI ghi sẵn các con số.</p>
+        <ol class="signs6">
+          <li>Lượt đáp trả có lí lẽ</li>
+          <li>Lần dẫn bằng chứng có nguồn</li>
+          <li>Lần thừa nhận hoặc điều chỉnh quan điểm</li>
+          <li>Lỗi ngụy biện được AI chỉ ra</li>
+          <li>Lần đề nghị AI “làm hộ” (càng ít càng tốt)</li>
+          <li>Mức tăng điểm bảng kiểm từ bản đầu đến bản phát huy</li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. CƠ SỞ KHOA HỌC ================= -->
+<section class="panelv" id="p-nc" role="tabpanel" aria-labelledby="t-nc" tabindex="-1" hidden>
+  <div class="wrap paper-grid">
+    <nav class="toc" id="toc" aria-label="Mục lục phần cơ sở khoa học"><p class="eyebrow">Mục lục</p></nav>
+    <article class="paper" id="paper">
+      <header>
+        <p class="eyebrow">Phần 6 · Cơ sở khoa học</p>
+        <p class="note">Dự án khoa học kĩ thuật năm học <span data-info="namHoc">2026–2027</span> · Lĩnh vực Khoa học xã hội và hành vi</p>
+        <h2 class="title">Cơ sở khoa học của mô&nbsp;hình “Bạn cùng phản biện”</h2>
+        <p class="authors" id="paperAuthors"></p>
+        <p class="aff" id="paperAff"></p>
+      </header>
+      <details class="toc-m" id="tocM"><summary>Mục lục</summary><ol id="tocMList"></ol></details>
+
+      <div class="abstract">
+        <p class="eyebrow">Ý chính</p>
+        <p>Khi AI trả lời hộ, học sinh làm bài luyện tập tốt hơn nhưng tự làm bài kiểm tra lại kém đi (Bastani và cộng sự, 2025). “Bạn cùng phản biện” đổi vai của AI: từ người trả lời thành người bạn hỏi lại, góp ý và phản bác theo quy trình 5 bước (5P), còn học sinh luôn nói trước, tự kiểm chứng và tự viết lại lập luận của mình. Cách làm này dựa trên sáu cơ sở khoa học về lập luận, câu hỏi gợi mở, đối thoại tranh luận, hỗ trợ vừa sức, phản hồi và việc không giao việc suy nghĩ cho AI.</p>
+        <p class="kw"><b>Từ khóa:</b> tư duy phản biện; trí tuệ nhân tạo tạo sinh; đối thoại phản biện; lập luận; học sinh trung học phổ thông.</p>
+      </div>
+
+      <h3 id="s1"><span class="num">01</span>Mục đích của trang</h3>
+      <div class="body">
+        <p>Trang giúp học sinh THPT dùng ChatGPT, Gemini hoặc Copilot để <b>luyện</b> tư duy phản biện, không phải để AI <b>làm hộ</b>. Em chọn vai của AI, mức bắt đầu và chủ đề; trang soạn sẵn câu lệnh “cài vai” để AI hỏi lại, góp ý và phản bác thay vì đưa đáp án. Trò chơi, phần Tự kiểm tra và đồng hồ Trên lớp giúp em luyện đều đặn, ở nhà hay trên lớp đều được.</p>
+        <p class="rq">Có thể biến AI từ “cỗ máy trả lời” thành “bạn cùng phản biện” của học sinh hay không?</p>
+        <p>Mục đích này phù hợp định hướng giáo dục trí tuệ nhân tạo trong trường phổ thông: rèn cho học sinh tư duy phản biện, khả năng kiểm chứng thông tin và dùng AI an toàn, có trách nhiệm (Bộ Giáo dục và Đào tạo, 2026). Nó cũng đáp ứng yêu cầu của Chương trình giáo dục phổ thông 2018 là học sinh “biết đặt các câu hỏi khác nhau về một sự vật, hiện tượng, vấn đề…, biết quan tâm tới các chứng cứ…” (Bộ Giáo dục và Đào tạo, 2018).</p>
+      </div>
+
+      <h3 id="s2"><span class="num">02</span>Tư duy phản biện là gì</h3>
+      <div class="body">
+        <p>Tư duy phản biện là “tư duy hợp lí, có phản tư, tập trung vào việc quyết định nên tin điều gì hoặc làm gì” (Ennis, 1985, tr. 45), gồm các kĩ năng cốt lõi: diễn giải, phân tích, đánh giá, suy luận, giải thích và tự điều chỉnh (Facione, 1990).</p>
+        <p>Trên trang này, tư duy phản biện được hiểu là năng lực phân tích, đánh giá lập luận và bằng chứng, xem xét quan điểm trái chiều để đi đến kết luận hợp lí và tự điều chỉnh suy nghĩ của mình. Đó cũng là những gì em luyện: nêu luận điểm có lí lẽ và bằng chứng, tìm giả định ngầm, đánh giá nguồn tin, nhận ra ngụy biện và viết lại lập luận mạnh hơn.</p>
+      </div>
+
+      <h3 id="s3"><span class="num">03</span>Sáu cơ sở khoa học</h3>
+      <div class="body"><p>Mỗi cơ sở là một học thuyết hoặc nghiên cứu đã công bố, kèm tính năng trên trang áp dụng nó.</p></div>
+      <ol class="bcards">
+        <li class="bcard" id="b1">
+          <span class="bn">01</span>
+          <h4>Lập luận có cấu trúc</h4>
+          <p class="bth">Mô hình lập luận Toulmin</p>
+          <p>Một lập luận đầy đủ gồm luận điểm, dữ kiện (bằng chứng), lí lẽ liên kết, cơ sở hậu thuẫn, mức độ khẳng định và phản bác (Toulmin, 2003).</p>
+          <p class="buse"><b>Trên trang:</b> bảng kiểm lập luận 5 thành phần, tối đa 20 điểm. AI dùng bảng kiểm để chấm ở bước Phát huy; em dùng ở phần Tự kiểm tra.</p>
+        </li>
+        <li class="bcard" id="b2">
+          <span class="bn">02</span>
+          <h4>Hỏi để em tự tìm ra</h4>
+          <p class="bth">Câu hỏi Socrates</p>
+          <p>Hỏi gợi mở có hệ thống để người học tự tìm ra câu trả lời: làm rõ ý, tìm giả định, hỏi lí do và bằng chứng, xét góc nhìn khác, xét hệ quả (Paul &amp; Elder, 2006). Trong thử nghiệm với học sinh mô phỏng, chatbot hỏi kiểu Socrates hỗ trợ phản tư và tư duy phản biện tốt hơn hẳn chatbot thông thường (Favero và cộng sự, 2025).</p>
+          <p class="buse"><b>Trên trang:</b> vai Người hỏi; AI dùng luân phiên sáu kiểu câu hỏi ở bước Phân tích và Phản hồi.</p>
+        </li>
+        <li class="bcard" id="b3">
+          <span class="bn">03</span>
+          <h4>Tranh luận với người nghĩ khác</h4>
+          <p class="bth">Học lập luận qua đối thoại tranh luận</p>
+          <p>Học sinh thường xuyên tranh luận với bạn có quan điểm trái chiều trong ba năm viết được lập luận xem xét cả hai phía nhiều hơn hẳn nhóm học qua thảo luận do giáo viên dẫn dắt (Kuhn &amp; Crowell, 2011). Tổng hợp nhiều nghiên cứu cũng cho thấy đối thoại, vấn đề gắn với thực tế và sự kèm cặp giúp phát triển tư duy phản biện (Abrami và cộng sự, 2015).</p>
+          <p class="buse"><b>Trên trang:</b> vai Đối thủ và bước Phản bác; lệnh PHẢN BÁC, ĐỔI PHE; 103 chủ đề tranh luận gắn với đời sống.</p>
+        </li>
+        <li class="bcard" id="b4">
+          <span class="bn">04</span>
+          <h4>Hỗ trợ vừa sức, giảm dần</h4>
+          <p class="bth">Vùng phát triển gần và “giàn giáo”</p>
+          <p>Người học tiến bộ khi được hỗ trợ ở những việc chưa tự làm được nhưng làm được nếu có hướng dẫn (Vygotsky, 1978; Wood và cộng sự, 1976). Sự hỗ trợ cần điều chỉnh theo mức hiểu của người học và giảm dần để người học tự làm (van de Pol và cộng sự, 2010).</p>
+          <p class="buse"><b>Trên trang:</b> ba mức Làm quen, Vững vàng, Thử thách; AI tự tăng, giảm độ khó theo câu trả lời và gợi ý từ ít đến nhiều; lệnh GỢI Ý, CHẬM LẠI.</p>
+        </li>
+        <li class="bcard" id="b5">
+          <span class="bn">05</span>
+          <h4>Phản hồi chỉ ra bước tiếp theo</h4>
+          <p class="bth">Phản hồi giúp tiến bộ</p>
+          <p>Phản hồi hiệu quả giúp người học trả lời ba câu hỏi: mình hướng tới đâu, mình đang tiến triển thế nào, bước tiếp theo là gì (Hattie &amp; Timperley, 2007).</p>
+          <p class="buse"><b>Trên trang:</b> bước Phản hồi nêu một điểm mạnh, một chỗ còn hổng và một câu hỏi làm rõ; bước Phát huy so điểm bản đầu với bản viết lại; sổ nhật ký ghi tiến bộ qua các buổi.</p>
+        </li>
+        <li class="bcard" id="b6">
+          <span class="bn">06</span>
+          <h4>Không để AI nghĩ hộ</h4>
+          <p class="bth">Giảm tải nhận thức</p>
+          <p>Giảm tải nhận thức là dùng công cụ bên ngoài để giảm phần việc suy nghĩ của một nhiệm vụ (Risko &amp; Gilbert, 2016). Khi giao quá nhiều việc suy nghĩ cho AI, tư duy phản biện có xu hướng thấp hơn (Gerlich, 2025; Vũ Trọng Lưỡng và cộng sự, 2026). Ở học sinh trung học, dùng AI tự do giúp điểm bài luyện tập tăng 48% nhưng điểm bài kiểm tra tự làm giảm 17%; khi AI chỉ gợi ý, tác hại này gần như không còn (Bastani và cộng sự, 2025).</p>
+          <p class="buse"><b>Trên trang:</b> luật “3 không – 3 phải”: AI không viết hộ, không đưa đáp án; em luôn phát biểu trước và tự kiểm chứng ở hai nguồn; lệnh NHỚ VAI khi AI lỡ làm hộ.</p>
+        </li>
+      </ol>
+
+      <h3 id="s4"><span class="num">04</span>Mô hình “Bạn&nbsp;cùng&nbsp;phản&nbsp;biện”</h3>
+      <div class="body"><p>Mô hình ghép sáu cơ sở trên thành quy trình 5P. Màu cho biết ai dẫn dắt từng bước.</p></div>
+      <figure>
+        <ol class="p5">
+          <li class="hs"><span class="s">BƯỚC 1</span><b>Phát biểu</b><span class="who"><i class="k hs"></i>Học sinh</span><p>Nêu quan điểm theo khung “Mình cho rằng… vì… Ví dụ là…” trước khi AI tham gia.</p></li>
+          <li class="ai"><span class="s">BƯỚC 2</span><b>Phân tích</b><span class="who"><i class="k ai"></i>AI cùng học sinh</span><p>Bóc tách luận điểm, lí lẽ, bằng chứng; chỉ ra một giả định ngầm để học sinh chọn hoặc chỉnh lại.</p></li>
+          <li class="ai"><span class="s">BƯỚC 3</span><b>Phản hồi</b><span class="who"><i class="k ai"></i>AI</span><p>Một điểm mạnh, một chỗ còn hổng, một câu hỏi làm rõ; học sinh bổ sung bằng chứng đã kiểm chứng ở hai nguồn.</p></li>
+          <li class="both"><span class="s">BƯỚC 4</span><b>Phản bác</b><span class="who"><i class="k both"></i>AI và học sinh</span><p>Phản đề khó dần, gọi tên ngụy biện; học sinh đáp trả và được quyền điều chỉnh quan điểm. Lặp lại hai, ba vòng.</p></li>
+          <li class="hs"><span class="s">BƯỚC 5</span><b>Phát huy</b><span class="who"><i class="k hs"></i>Học sinh và AI Trọng tài</span><p>Viết lại bản mạnh hơn; AI chấm theo bảng kiểm, chỉ ra tiến bộ và một thử thách; học sinh ghi nhật ký.</p></li>
+        </ol>
+        <figcaption><b>Hình 1.</b> Quy trình 5P của mô hình “Bạn cùng phản biện”. Sau bước 5, học sinh chuyển sang chủ đề mới ở mức khó hơn.</figcaption>
+      </figure>
+      <div class="body"><p>Câu lệnh còn dạy AI trò chuyện như một người bạn: nhắc lại ý của em trước khi hỏi, mỗi lượt ngắn, khen cụ thể thay vì khen chung chung, động viên khi em bí, và chỉ công nhận em đúng khi em có lí lẽ hoặc bằng chứng mới. Hai bên cùng giữ bộ quy tắc “3 không – 3 phải”:</p></div>
+      <div class="rules3">
+        <div class="ai-col"><h4>AI không</h4><ol><li>viết hộ, đưa đáp án, dàn ý hay bài mẫu, kể cả khi học sinh năn nỉ;</li><li>phán xét con người, khen chung chung;</li><li>đưa số liệu, sự kiện mà thiếu lời nhắc “cần kiểm chứng”.</li></ol></div>
+        <div class="hs-col"><h4>Học sinh phải</h4><ol><li>tự phát biểu trước khi hỏi AI;</li><li>tự kiểm chứng mọi số liệu, sự kiện bằng ít nhất hai nguồn đáng tin;</li><li>rút kinh nghiệm sau mỗi buổi, ghi nhật ký.</li></ol></div>
+      </div>
+
+      <h3 id="s5"><span class="num">05</span>An toàn khi dùng</h3>
+      <div class="body">
+        <p>Trang không thu thập dữ liệu: các lựa chọn, câu trả lời phần Tự kiểm tra và sổ nhật ký chỉ lưu trên trình duyệt của máy đang dùng. Câu lệnh dặn AI không hỏi họ tên, trường, địa chỉ; khi em kể chuyện buồn hay áp lực nặng nề, AI dừng tranh luận và khuyên em nói với người lớn tin cậy hoặc gọi Tổng đài quốc gia bảo vệ trẻ em 111.</p>
+        <p>UNESCO khuyến nghị cân nhắc độ tuổi tối thiểu 13 khi dùng AI tạo sinh trong lớp học (Miao &amp; Holmes, 2023). Khi dùng trên lớp, học sinh nên dùng thiết bị, tài khoản do nhà trường quản lí và không nhập thông tin cá nhân vào AI.</p>
+      </div>
+
+      <h3 id="s6"><span class="num">06</span>Giải thích một số từ</h3>
+      <dl class="gloss">
+        <dt>Tư duy phản biện</dt><dd>Khả năng xem xét một ý kiến có đúng, có đủ lí lẽ và bằng chứng hay không, trước khi tin hoặc bác bỏ.</dd>
+        <dt>Lập luận</dt><dd>Cách nói hoặc viết để bảo vệ một ý kiến, gồm luận điểm (ý kiến), lí lẽ (vì sao) và bằng chứng (ví dụ, số liệu có nguồn).</dd>
+        <dt>Ngụy biện</dt><dd>Lập luận nghe có lí nhưng thật ra sai, ví dụ “ai cũng làm vậy nên chắc đúng”.</dd>
+        <dt>Giả định ngầm</dt><dd>Điều người nói mặc nhiên coi là đúng mà không nói ra.</dd>
+        <dt>Giàn giáo</dt><dd>Sự hỗ trợ tạm thời, vừa đủ để người học làm được việc khó, rồi bớt dần khi người học tự làm được.</dd>
+        <dt>Câu lệnh</dt><dd>Đoạn chữ dán vào ứng dụng AI để AI biết phải đóng vai gì và trò chuyện thế nào.</dd>
+      </dl>
+
+      <h3 id="s7"><span class="num">07</span>Tài liệu tham khảo</h3>
+      <p class="refs-h">Tiếng Việt</p>
+      <ol class="refs">
+        <li>Bộ Giáo dục và Đào tạo. (2018). <i>Chương trình giáo dục phổ thông – Chương trình tổng thể</i> (Ban hành kèm theo Thông tư số 32/2018/TT-BGDĐT ngày 26/12/2018).</li>
+        <li>Bộ Giáo dục và Đào tạo. (2026). <i>Quyết định số 2422/QĐ-BGDĐT ngày 18/8/2026 ban hành Khung nội dung giáo dục trí tuệ nhân tạo cho học sinh phổ thông</i>.</li>
+        <li>Vũ Trọng Lưỡng, Nguyễn Thu Uyên, Đinh Thị Lan Anh, Nguyễn Thị Thu Hằng, Lê Phương Anh, &amp; Nguyễn Thị Hải Yến. (2026). Ảnh hưởng của trí tuệ nhân tạo tạo sinh đến tư duy phản biện của học sinh trung học phổ thông: Nghiên cứu tại các trường trực thuộc Đại học Quốc gia Hà Nội. <i>Tạp chí Giáo dục, 26</i>(Số đặc biệt 6), 333–340.</li>
+      </ol>
+      <p class="refs-h">Tiếng Anh</p>
+      <ol class="refs">
+        <li>Abrami, P. C., Bernard, R. M., Borokhovski, E., Waddington, D. I., Wade, C. A., &amp; Persson, T. (2015). Strategies for teaching students to think critically: A meta-analysis. <i>Review of Educational Research, 85</i>(2), 275–314. <a href="https://doi.org/10.3102/0034654314551063" target="_blank" rel="noopener">https://doi.org/10.3102/0034654314551063</a></li>
+        <li>Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., &amp; Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. <i>Proceedings of the National Academy of Sciences, 122</i>(26), e2422633122. <a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener">https://doi.org/10.1073/pnas.2422633122</a></li>
+        <li>Ennis, R. H. (1985). A logical basis for measuring critical thinking skills. <i>Educational Leadership, 43</i>(2), 44–48.</li>
+        <li>Facione, P. A. (1990). <i>Critical thinking: A statement of expert consensus for purposes of educational assessment and instruction (The Delphi Report)</i>. American Philosophical Association. (ERIC Document No. ED315423)</li>
+        <li>Favero, L., Pérez-Ortiz, J. A., Käser, T., &amp; Oliver, N. (2025). Enhancing critical thinking in education by means of a Socratic chatbot. In <i>AI in Education and Educational Research (AIEER 2024)</i>, Communications in Computer and Information Science (Vol. 2519, pp. 17–32). Springer. <a href="https://doi.org/10.1007/978-3-031-93409-4_2" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-93409-4_2</a></li>
+        <li>Gerlich, M. (2025). AI tools in society: Impacts on cognitive offloading and the future of critical thinking. <i>Societies, 15</i>(1), 6. <a href="https://doi.org/10.3390/soc15010006" target="_blank" rel="noopener">https://doi.org/10.3390/soc15010006</a></li>
+        <li>Hattie, J., &amp; Timperley, H. (2007). The power of feedback. <i>Review of Educational Research, 77</i>(1), 81–112. <a href="https://doi.org/10.3102/003465430298487" target="_blank" rel="noopener">https://doi.org/10.3102/003465430298487</a></li>
+        <li>Kuhn, D., &amp; Crowell, A. (2011). Dialogic argumentation as a vehicle for developing young adolescents’ thinking. <i>Psychological Science, 22</i>(4), 545–552. <a href="https://doi.org/10.1177/0956797611402512" target="_blank" rel="noopener">https://doi.org/10.1177/0956797611402512</a></li>
+        <li>Miao, F., &amp; Holmes, W. (2023). <i>Guidance for generative AI in education and research</i>. UNESCO. <a href="https://doi.org/10.54675/EWZM9535" target="_blank" rel="noopener">https://doi.org/10.54675/EWZM9535</a></li>
+        <li>Paul, R., &amp; Elder, L. (2006). <i>The thinker’s guide to the art of Socratic questioning</i>. Foundation for Critical Thinking.</li>
+        <li>Risko, E. F., &amp; Gilbert, S. J. (2016). Cognitive offloading. <i>Trends in Cognitive Sciences, 20</i>(9), 676–688. <a href="https://doi.org/10.1016/j.tics.2016.07.002" target="_blank" rel="noopener">https://doi.org/10.1016/j.tics.2016.07.002</a></li>
+        <li>Toulmin, S. E. (2003). <i>The uses of argument</i> (Updated ed.). Cambridge University Press. (Xuất bản lần đầu năm 1958)</li>
+        <li>van de Pol, J., Volman, M., &amp; Beishuizen, J. (2010). Scaffolding in teacher–student interaction: A decade of research. <i>Educational Psychology Review, 22</i>(3), 271–296. <a href="https://doi.org/10.1007/s10648-010-9127-6" target="_blank" rel="noopener">https://doi.org/10.1007/s10648-010-9127-6</a></li>
+        <li>Vygotsky, L. S. (1978). <i>Mind in society: The development of higher psychological processes</i>. Harvard University Press.</li>
+        <li>Wood, D., Bruner, J. S., &amp; Ross, G. (1976). The role of tutoring in problem solving. <i>Journal of Child Psychology and Psychiatry, 17</i>(2), 89–100. <a href="https://doi.org/10.1111/j.1469-7610.1976.tb00381.x" target="_blank" rel="noopener">https://doi.org/10.1111/j.1469-7610.1976.tb00381.x</a></li>
+      </ol>
+
+      <div class="cite">
+        <b>Trích dẫn trang này</b>
+        <p id="citeText"></p>
+        <div class="actions"><button type="button" class="btn ghost small" id="copyCite">Sao chép trích dẫn</button><span class="status" id="citeStatus" role="status" aria-live="polite"></span></div>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span><strong>Bạn cùng phản biện</strong> · Dự án khoa học kĩ thuật năm học <span data-info="namHoc">2026–2027</span> · <span id="footSchool">Trường THPT Phan Văn Trị, thành phố Cần Thơ</span>. Phiên bản 11/2026.</span>
+    <span id="footPeople"></span>
+    <span>Trang miễn phí, không thu thập dữ liệu cá nhân; mọi lựa chọn chỉ lưu trên trình duyệt của em.</span>
+    <span class="help">Nếu em đang buồn hoặc gặp áp lực nặng nề, hãy nói với người lớn em tin cậy hoặc gọi Tổng đài quốc gia bảo vệ trẻ em <b>111</b> (miễn phí).</span>
+  </div>
+</footer>
+
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
